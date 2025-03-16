@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Siege Pulse - Strategic Board Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2a3440;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    header {
+      width: 100%;
+      background-color: #1a2330;
+      padding: 15px 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      margin: 0;
+      color: #00c8ff;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    .game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .instructions {
+      max-width: 600px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+    
+    .unit-guide {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 15px;
+    }
+    
+    .unit {
+      text-align: center;
+      margin: 0 10px;
+    }
+    
+    .unit-icon {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    .player-info {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .player {
+      padding: 5px 15px;
+      border-radius: 5px;
+    }
+    
+    .player1 {
+      background-color: rgba(0, 200, 255, 0.3);
+    }
+    
+    .player2 {
+      background-color: rgba(255, 150, 0, 0.3);
+    }
+    
+    /* Start Button Overlay Styles */
+    .start-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    
+    .start-button {
+      padding: 15px 40px;
+      font-size: 24px;
+      background: linear-gradient(to bottom right, #00c8ff, #0066cc);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+    
+    .start-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 200, 255, 0.8);
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Siege Pulse</h1>
+  </header>
+  
+  <div class="game-container">
+    <div class="player-info">
+      <div class="player player1">Player 1 (Blue)</div>
+      <div class="player player2">Player 2 (Orange)</div>
+    </div>
+    
+    <!-- Game canvas will be inserted here by p5.js -->
+    
+    <!-- Start Button Overlay -->
+    <div class="start-overlay" id="startOverlay">
+      <button class="start-button" id="startButton">Start Game</button>
+    </div>
+  </div>
+  
+  <div class="instructions">
+    <h2>How to Play</h2>
+    <p>Siege Pulse is a turn-based strategy game where you control units to capture the central tower and defeat your opponent.</p>
+    
+    <h3>Game Rules:</h3>
+    <ul>
+      <li><strong>Objective:</strong> Control the central tower for 2 consecutive turns or eliminate all enemy units.</li>
+      <li><strong>Movement:</strong> Click on your unit, then click on an adjacent empty square to move.</li>
+      <li><strong>Tower Control:</strong> Have a unit adjacent to the tower without enemy units nearby to gain control.</li>
+    </ul>
+    
+    <div class="unit-guide">
+      <div class="unit">
+        <div class="unit-icon">●</div>
+        <strong>Blaster</strong>
+        <p>Attacks adjacent squares</p>
+      </div>
+      <div class="unit">
+        <div class="unit-icon">■</div>
+        <strong>Shield</strong>
+        <p>Protects adjacent units</p>
+      </div>
+      <div class="unit">
+        <div class="unit-icon">▲</div>
+        <strong>Launcher</strong>
+        <p>Attacks in straight lines</p>
+      </div>
+    </div>
+    
+    <p><strong>Tip:</strong> Press 'R' to restart the game after a win.</p>
+  </div>
+  
+  <footer>
+    Siege Pulse - A Strategic Board Game
+  </footer>
+  
+  <script src="sketch2.js"></script>
+</body>
+</html>
