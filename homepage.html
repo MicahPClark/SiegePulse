@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Siege Pulse - Strategic Board Game</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2a3440;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    header {
+      width: 100%;
+      background-color: #1a2330;
+      padding: 20px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 48px;
+      color: #00c8ff;
+      text-shadow: 0 0 15px rgba(0, 200, 255, 0.7);
+      letter-spacing: 2px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #aaa;
+      margin-top: 10px;
+    }
+    
+    .game-modes {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .mode-card {
+      background: rgba(30, 40, 60, 0.8);
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(0, 200, 255, 0.3);
+    }
+    
+    .mode-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: #00c8ff;
+    }
+    
+    .mode-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      color: #00c8ff;
+    }
+    
+    .mode-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #00c8ff;
+    }
+    
+    .mode-description {
+      color: #ddd;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    
+    .mode-button {
+      padding: 12px 30px;
+      font-size: 18px;
+      background: linear-gradient(to bottom right, #00c8ff, #0066cc);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .mode-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+    }
+    
+    footer {
+      margin-top: auto;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      width: 100%;
+      background-color: #1a2330;
+    }
+    
+    .game-logo {
+      max-width: 600px;
+      margin: 20px auto;
+      position: relative;
+    }
+    
+    .logo-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 200, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+      z-index: -1;
+      border-radius: 50%;
+    }
+    
+    .game-description {
+      max-width: 800px;
+      text-align: center;
+      line-height: 1.6;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: space-around;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      flex-wrap: wrap;
+    }
+    
+    .feature {
+      width: 200px;
+      text-align: center;
+      margin: 20px;
+    }
+    
+    .feature-icon {
+      font-size: 36px;
+      color: #00c8ff;
+      margin-bottom: 10px;
+    }
+    
+    .feature-title {
+      font-size: 18px;
+      color: #00c8ff;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SIEGE PULSE</h1>
+    <div class="subtitle">A Strategic Board Game of Tower Control</div>
+  </header>
+  
+  <div class="game-logo">
+    <div class="logo-glow"></div>
+    <svg width="200" height="200" viewBox="0 0 200 200" style="margin: 0 auto; display: block;">
+      <circle cx="100" cy="100" r="80" fill="#1a2330" stroke="#00c8ff" stroke-width="3" />
+      <circle cx="100" cy="100" r="40" fill="#00c8ff" opacity="0.3" />
+      <circle cx="100" cy="100" r="20" fill="#00c8ff" opacity="0.6" />
+      <!-- Pulse animation -->
+      <circle cx="100" cy="100" r="60" fill="none" stroke="#00c8ff" stroke-width="2" opacity="0.5">
+        <animate attributeName="r" values="60;90;60" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </div>
+  
+  <div class="game-description">
+    Siege Pulse is a turn-based strategy game where players control specialized units to capture a central tower. 
+    Deploy your Blasters, Shields, and Launchers wisely to outmaneuver your opponent and secure victory!
+  </div>
+  
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">⚔️</div>
+      <div class="feature-title">Strategic Gameplay</div>
+      <p>Plan your moves carefully to outmaneuver your opponent</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">Unique Units</div>
+      <p>Each unit has special abilities and strengths</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏆</div>
+      <div class="feature-title">Tower Control</div>
+      <p>Capture and hold the central tower to win</p>
+    </div>
+  </div>
+  
+  <div class="game-modes">
+    <div class="mode-card">
+      <div class="mode-icon">👥</div>
+      <h2 class="mode-title">Two Player Mode</h2>
+      <p class="mode-description">
+        Challenge a friend in local multiplayer. Take turns making moves on the same device and test your strategic skills against each other. Control your units, capture the tower, and claim victory!
+      </p>
+      <a href="index.html" class="mode-button">Play Now</a>
+    </div>
+    
+    <div class="mode-card">
+      <div class="mode-icon">🤖</div>
+      <h2 class="mode-title">Single Player Mode</h2>
+      <p class="mode-description">
+        Test your skills against an AI opponent. Play as the blue team and face off against the computer-controlled orange team. Develop strategies to outmaneuver the AI and secure victory!
+      </p>
+      <a href="index.html" class="mode-button">Play Now</a>
+    </div>
+  </div>
+  
+  <footer>
+    Siege Pulse - A Strategic Board Game &copy; 2023
+  </footer>
+</body>
+</html> 
